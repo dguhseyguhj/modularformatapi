@@ -1,13 +1,3 @@
-function maxSlidingWindow(nums, k) {
-  const result = [];
-  const queue = [];
-  for (let i = 0; i < nums.length; i++) {
-    while (queue.length && nums[i] >= nums[queue[queue.length - 1]]) {
-      queue.pop();
-    }
-    queue.push(i);
-    if (queue[0] === i - k) queue.shift();
-    if (i >= k - 1) result.push(nums[queue[0]]);
-  }
-  return result;
-}
+const originalObject = { name: "Alice", age: 30 };
+const clonedObject = JSON.parse(JSON.stringify(originalObject));
+console.log(clonedObject); // { name: "Alice", age: 30 }

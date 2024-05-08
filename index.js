@@ -1,3 +1,4 @@
-const originalObject = { name: "Alice", age: 30 };
-const clonedObject = JSON.parse(JSON.stringify(originalObject));
-console.log(clonedObject); // { name: "Alice", age: 30 }
+const person = { name: "Alice", age: 30 };
+if (person.hasOwnProperty("age")) {
+  console.log("The person has an age property");
+}

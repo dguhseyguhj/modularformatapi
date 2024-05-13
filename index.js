@@ -1,16 +1,14 @@
-function longestPalindrome(s) {
-  const map = new Map();
-  let hasOdd = false;
-  let result = 0;
-  for (const char of s) {
-    map.set(char, (map.get(char) || 0) + 1);
-  }
-  for (const count of map.values()) {
-    if (count % 2 === 0) result += count;
-    else {
-      result += count - 1;
-      hasOdd = true;
+const selectionSort = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
+      }
+    }
+    if (minIndex !== i) {
+      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
     }
   }
-  return hasOdd ? result + 1 : result;
-}
+  return arr;
+};
